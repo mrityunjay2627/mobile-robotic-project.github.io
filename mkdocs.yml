@@ -1,0 +1,6 @@
+site_name: Mobile Robotics Project
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
