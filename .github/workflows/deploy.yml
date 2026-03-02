@@ -1,4 +1,4 @@
-name: Deploy MkDocs site to Pages
+name: Deploy MkDocs site
 
 on:
   push:
@@ -12,16 +12,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Install MkDocs
-        run: pip install mkdocs
+      - run: pip install mkdocs
 
-      - name: Deploy to gh-pages
-        run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force
